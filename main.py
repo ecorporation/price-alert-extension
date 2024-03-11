@@ -1,9 +1,9 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request
 import yfinance as yf
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def index():
     return render_template("index.html")
 
